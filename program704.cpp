@@ -1,0 +1,35 @@
+// write a recursive program to count number of digits
+//Recursion
+//i/p: 7891
+//o/p:  4  
+
+#include<iostream>
+using namespace std;
+
+int CountDigits(int iNo)
+{
+    static int iCount = 0;
+
+    if(iNo > 0)
+    {
+        iCount++;
+        cout<<iNo<<"\n";            //721   72  7
+        CountDigits(iNo / 10);
+    }
+    return iCount;
+}
+
+int main()
+{
+    int iValue = 0;
+    int iRet = 0;
+
+    cout<<"Enter a number: ";
+    cin>>iValue;
+    
+    iRet = CountDigits(iValue);
+
+    //cout<<"Number of digits are: "<<iRet<<"\n";
+
+    return 0;
+}
